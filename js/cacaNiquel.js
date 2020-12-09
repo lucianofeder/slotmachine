@@ -66,7 +66,7 @@ const updateMoney = (value) => {
     let money = Number(moneySpan.innerText)
     money += value
     moneySpan.innerText = money
-    console.log(money)
+    animateAcress(value)
 }
 
 const updateNumberOfPlays = () => {
@@ -179,6 +179,21 @@ const setTwo7WinPhrase = () => {
 
     let randomPos = Math.ceil(Math.random()*(phrases.length -1))
     setText(phrases[randomPos])
+}
+
+const animateAcress = async (value) => {
+    let span = document.getElementById('hiddenAcress')
+    if (value > 0) {
+        span.innerText = `+${value}`
+        span.classList.add('textGreen')
+    } else {
+        span.innerText = `${value}`
+        span.classList.add('textRed')
+    }
+    
+    span.classList.remove('hide')
+    await sleep(700)
+    span.classList.add('hide')
 }
 
 let playedMoney = 400
