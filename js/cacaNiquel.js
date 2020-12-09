@@ -45,20 +45,32 @@ const getResultValue = () => {
 const stopMachineSlots = () => {runMachine = false}
 
 const runMachineSlots = async () => {
-    if (!runMachine) {
-        setText()
-        runMachine = true
-        let probabilityArr = setProbabilityArray ()
-        while (runMachine) {
-            updateSlot(1, getSlotValues(probabilityArr))
-            updateSlot(2, getSlotValues(probabilityArr))
-            updateSlot(3, getSlotValues(probabilityArr))
-            await sleep(100)
+    let money = getMoney()
+    if (!money <= playedMoney) {
+        if (!runMachine) {
+            setText()
+            runMachine = true
+            let probabilityArr = setProbabilityArray ()
+            while (runMachine) {
+                updateSlot(1, getSlotValues(probabilityArr))
+                updateSlot(2, getSlotValues(probabilityArr))
+                updateSlot(3, getSlotValues(probabilityArr))
+                await sleep(100)
+            }
+        } else {
+            console.log('Maquina ja esta rodando')
         }
     } else {
-        console.log('Maquina ja esta rodando')
+        window.alert('Infelizmente seu dinheiro esgotou, faca um deposito para continuar')
     }
+    
 
+}
+
+const getMoney = () => {
+    let moneySpan = document.getElementById('money')
+    let money = Number(moneySpan.innerText)
+    return money
 }
 
 const updateMoney = (value) => {
