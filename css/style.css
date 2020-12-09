@@ -34,7 +34,7 @@ ol, ul {
 }
 
 body{
-    background-image: linear-gradient(rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%), url('/img/background.jpg');
+    background-image: linear-gradient(rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%), url('../img/background.jpg');
     background-color: brown;
     background-position: center;
     background-size: fill;
