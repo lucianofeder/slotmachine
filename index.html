@@ -4,36 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caca Niquel</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7743acdf81.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="mainGame">
-        <div class="player">
-            <figure>
-                <img src="./img/avatar.jpg" alt="perfil picture">
-                <figcaption>Joseph Climber</figcaption>
-            </figure>
-            <ul class="playerStatus">
-                <li>
-                    <i class="fas fa-dollar-sign"></i><span id="money">30000</span>
-                </li>
-                <li>
-                    <i class="fas fa-play"></i><span id="playCount">0</span>
-                </li>
-            </ul>
+    <main>
+        <div id="mainGame">
+            <div class="player">
+                <figure>
+                    <img src="./img/avatar.jpg" alt="perfil picture">
+                    <figcaption>Joseph Climber</figcaption>
+                </figure>
+                <ul class="playerStatus">
+                    <li>
+                        <i class="fas fa-dollar-sign"></i><strong><span id="money">30000</span></strong>
+                    </li>
+                    <li>
+                        <i class="fas fa-play"></i><span id="playCount">0</span>
+                    </li>
+                </ul>
 
+            </div>
+            <div class="display">
+                <div class="figure">
+                    <img src="./img/7.png" alt="Slot machine Value 7" id="slot-1" data-value='7'>
+                </div>
+                <div class="figure">
+                    <img src="./img/7.png" alt="Slot machine Value 7" id="slot-2" data-value="7">
+                </div>
+                <div class="figure">
+                    <img src="./img/7.png" alt="Slot machine Value 7" id="slot-3" data-value="7">
+                </div>
+            </div>
+            <div id="computerSays">Aperte PLAY para jogar!</div>
+            <div class="gameButtons">
+                <button id="runMachine">Play</button>
+                <button id="stopMachine">Stop</button>
+            </div>
         </div>
-        <div class="display">
-            <img src="./img/7.png" alt="Slot machine Value 7" id="slot-1" data-value='7'>
-            <img src="./img/7.png" alt="Slot machine Value 7" id="slot-2" data-value="7">
-            <img src="./img/7.png" alt="Slot machine Value 7" id="slot-3" data-value="7">
-        </div>
-        <div class="gameButtons">
-            <button id="runMachine">Let's roll</button>
-            <button id="stopMachine">Stop</button>
-        </div>
-    </div>
+    </main>
     <script src="./js/cacaNiquel.js"></script>
 </body>
 </html>

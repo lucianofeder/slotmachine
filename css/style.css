@@ -1,4 +1,196 @@
-img {
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, img, ol, ul, li, form,
+label, article, aside, figure,
+figcaption, footer, header, menu, nav, textarea
+{
+	margin: 0;
+	padding: 0;
+    border: 0;
+    outline: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+article, aside, figcaption, figure, 
+footer, header, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+body{
+    background-image: url("/img/background.jpg");
+    background-color: brown;
+    background-position: center;
+    background-size: fill;
+}
+
+body > main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(165, 42, 42, 0.5);
+    width: 100vw;
+    min-height: 100vh;
+}
+
+
+body div#mainGame {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    padding: 20px;
+    background-color: brown;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 
+                -1px -1px 2px rgba(255, 255, 255, 0.3);
+}
+
+body div#mainGame .player {
+    background-color: #311;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 
+    -1px -1px 2px rgba(255, 255, 255, 0.3);
+    color: #EFEEEE;
+}
+
+body div#mainGame .player figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body div#mainGame .player figure img{
+    border-radius: 100%;
+    margin-right: 20px;
     width: 100px;
     height: 100px;
+    border: 1px solid #311;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 
+                -1px -1px 2px rgba(255, 255, 255, 0.3);
+}
+
+body div#mainGame .player figure figcaption {
+    font-size: 1.4rem;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+body div#mainGame .player .playerStatus li {
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+body div#mainGame .player .playerStatus li span {
+    width: 3.5rem;
+    display: inline-block;
+    text-align: right;
+}
+
+body div#mainGame .player .playerStatus li .fas {
+    margin-right: 5px;
+}
+
+body div#mainGame .player .playerStatus li .fa-play {
+    font-size:  0.9rem;
+}
+
+body div#mainGame .player .playerStatus li .fa-dollar-sign {
+    color: #3a3;
+}
+
+body div#mainGame .display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    background-color: #311;
+    margin: 30px 0;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 
+                -1px -1px 2px rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+body div#mainGame .display .figure {
+    background-color: #EFEEEE;
+    margin: 3px;
+}
+
+body div#mainGame .display .figure img {
+    padding: 10px;
+    width: 90px;
+    height: 90px;  
+}
+
+body div#mainGame #computerSays {
+    height: 3rem;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    flex-wrap: wrap;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3), 
+    inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+}
+
+body div#mainGame .gameButtons {
+    display: flex;
+    flex: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+body div#mainGame .gameButtons button {
+    margin: 10px 20px;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    color: #EFEEEE;
+    background-color: #311;
+    font-size: 1.1rem;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    font-family: 'Righteous', cursive;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3), 
+                -1px -1px 2px rgba(255, 255, 255, 0.3);
+    transition: 400ms;
+    cursor: pointer;
+}
+
+body div#mainGame .gameButtons button:hover {
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3), 
+                inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+}
+
+body div#mainGame .gameButtons button:focus {
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3), 
+                inset -1px -1px 2px rgba(255, 255, 255, 0.3);
+    color: #311;
+    background-color: brown;
 }

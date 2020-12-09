@@ -46,6 +46,7 @@ const stopMachineSlots = () => {runMachine = false}
 
 const runMachineSlots = async () => {
     if (!runMachine) {
+        setText()
         runMachine = true
         let probabilityArr = setProbabilityArray ()
         while (runMachine) {
@@ -86,8 +87,10 @@ const getScore = () => {
         if (result[0] === result[1] && result [1] === result[2]) {
             if (quantitySeven === 3) {
                 updateMoney(playedMoney*1000)
+                setThree7WinPhrase()
             } else {
                 updateMoney(playedMoney*15)
+                setThreeWinPhrase()
             }
         }
 
@@ -95,14 +98,17 @@ const getScore = () => {
         else if (result[0] === result[1] || result [1] === result[2] || result[0] === result[2]){
             if (quantitySeven === 2) {
                 updateMoney(playedMoney*75)
+                setTwo7WinPhrase()
             } else {
                 updateMoney(playedMoney)
+                setTwoWinPhrase()
             }
         }
 
         //perdeu
         else {
             updateMoney(-playedMoney)
+            setLosePhrase()
         }
 
 
@@ -114,7 +120,68 @@ const getScore = () => {
 
 }
 
-let playedMoney = 200
+const setText = (text="Rrrroooodaaaando!!!") => {
+    let computerSays = document.getElementById('computerSays')
+    computerSays.innerText = text
+}
+
+
+
+const setLosePhrase = () => {
+    let phrases = [
+        'Mais sorte da proxima vez amigao.',
+        'Hoje nao, hoje nao.',
+        'Que pena, voce errou.',
+        'Tente novamente.',
+        'Parece que o 777 chegou nem perto desta vez.',
+        'Essa sua sorte eim amigo, tenta mais uminha.'
+    ]
+
+    let randomPos = Math.ceil(Math.random()*(phrases.length -1))
+    console.log(randomPos)
+    setText(phrases[randomPos])
+}
+
+const setTwoWinPhrase = () => {
+    let phrases = [
+        'Pelo menos da pra continuar jogando',
+        'Chegou perto, parabens!',
+        'Famoso grao em grao.',
+    ]
+
+    let randomPos = Math.ceil(Math.random()*(phrases.length -1))
+    setText(phrases[randomPos])
+}
+
+const setThreeWinPhrase = () => {
+    let phrases = [
+        'Ta pegando fogo bixo.',
+        'Parabens ja consegue pagar o aluguel.',
+        'Vou ter que chamar o Gerente, ta ganhando tudo!'
+    ]
+
+    let randomPos = Math.ceil(Math.random()*(phrases.length -1))
+    setText(phrases[randomPos])
+}
+
+const setThree7WinPhrase = () => {
+    let phrases = [
+        'DING DING DING DING, Parabens!!!'
+    ]
+    let randomPos = Math.ceil(Math.random()*(phrases.length -1))
+    setText(phrases[randomPos])
+}
+
+const setTwo7WinPhrase = () => {
+    let phrases = [
+        'Winner Winner,Chicken Dinner!'
+    ]
+
+    let randomPos = Math.ceil(Math.random()*(phrases.length -1))
+    setText(phrases[randomPos])
+}
+
+let playedMoney = 400
 let runMachine = false
 
 let btnRunMachine = document.getElementById('runMachine')
