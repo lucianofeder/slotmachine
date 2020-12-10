@@ -33,6 +33,10 @@ ol, ul {
     color: lime;
 }
 
+.hidden {
+    display: none;
+}
+
 body{
     background-image: linear-gradient(rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%), url('../img/background.jpg');
     background-color: brown;
