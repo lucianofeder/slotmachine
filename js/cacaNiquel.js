@@ -55,7 +55,7 @@ const runMachineSlots = async () => {
                 updateSlot(1, getSlotValues(probabilityArr))
                 updateSlot(2, getSlotValues(probabilityArr))
                 updateSlot(3, getSlotValues(probabilityArr))
-                await sleep(0)
+                await sleep(100)
             }
         } else {
             console.log('Maquina ja esta rodando')
