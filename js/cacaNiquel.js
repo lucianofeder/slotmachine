@@ -197,9 +197,11 @@ const animateAcress = async (value) => {
     let span = document.getElementById('hiddenAcress')
     if (value > 0) {
         span.innerText = `+${value}`
+        span.classList.remove(`textRed`)
         span.classList.add('textGreen')
     } else {
         span.innerText = `${value}`
+        span.classList.remove(`textGreen`)
         span.classList.add('textRed')
     }
     
