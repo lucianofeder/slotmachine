@@ -225,3 +225,24 @@ body div#mainGame .gameButtons button:focus {
     }
 
 }
+
+
+@media screen and (max-width: 400px) {
+    
+    body{
+        background-image: none;
+    }
+   
+    body div#mainGame {
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    body div#mainGame .display {
+
+    }
+
+
+}
